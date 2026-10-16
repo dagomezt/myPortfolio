@@ -121,3 +121,127 @@ section {
     margin: 0 auto;
     padding: var(--space-xl) var(--space-md);
 }
+
+/* =========================================
+   6. BOTONES
+   Clases reutilizables: .btn + una variante.
+   ========================================= */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    border: 2px solid var(--color-accent);
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+}
+
+/* =========================================
+   7. INICIO (HERO)
+   Ocupa casi toda la pantalla al cargar.
+   ========================================= */
+.hero {
+    min-height: calc(100vh - var(--header-height));  /* alto de pantalla menos el header */
+    display: flex;
+    flex-direction: column;     /* elementos uno debajo del otro */
+    justify-content: center;    /* centrados verticalmente */
+    gap: var(--space-sm);
+}
+
+.hero-greeting {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);  /* tamaño que se adapta al ancho de pantalla */
+}
+
+.hero-role {
+    font-size: clamp(1.25rem, 4vw, 2rem);
+    color: var(--color-text-muted);
+}
+
+.hero-description {
+    max-width: 50ch;   /* ~50 caracteres por línea, más fácil de leer */
+    color: var(--color-text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;   /* en pantallas pequeñas los botones bajan de línea */
+    gap: var(--space-md);
+    margin-top: var(--space-lg);
+}
+
+/* =========================================
+   8. PROYECTOS (tarjetas)
+   ========================================= */
+.projects-grid {
+    display: grid;
+    /* tantas columnas como quepan, cada una de mínimo 280px */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-lg);
+    margin-top: var(--space-lg);
+}
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-bg-alt);
+    border-radius: 12px;
+    overflow: hidden;   /* la imagen respeta las esquinas redondeadas */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);   /* la tarjeta "sube" un poco */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* todas las imágenes con la misma proporción */
+    object-fit: cover;      /* recorta sin deformar */
+    background-color: var(--color-bg);  /* se ve mientras no haya imagen */
+}
+
+/* Espaciado interno para todo lo que no es la imagen */
+.project-card h3,
+.project-card p,
+.project-card a {
+    padding: 0 var(--space-md);
+}
+
+.project-card h3 {
+    margin-top: var(--space-md);
+}
+
+.project-card p {
+    color: var(--color-text-muted);
+    flex-grow: 1;   /* empuja el enlace al fondo: tarjetas alineadas aunque el texto varíe */
+}
+
+.project-card a {
+    margin: var(--space-md) 0;
+    font-weight: 600;
+}
