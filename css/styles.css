@@ -1,0 +1,123 @@
+/* =========================================
+   1. VARIABLES
+   Valores que se repiten en todo el sitio.
+   Cambiarlos aquí los cambia en todas partes.
+   ========================================= */
+:root {
+    /* Colores */
+    --color-bg: #0f172a;          /* fondo principal */
+    --color-bg-alt: #1e293b;      /* fondo de secciones alternas / tarjetas */
+    --color-text: #e2e8f0;        /* texto principal */
+    --color-text-muted: #94a3b8;  /* texto secundario */
+    --color-accent: #38bdf8;      /* color de acento (enlaces, botones) */
+
+    /* Tipografía */
+    --font-main: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+    /* Espaciados y medidas */
+    --space-sm: 0.5rem;
+    --space-md: 1rem;
+    --space-lg: 2rem;
+    --space-xl: 4rem;
+    --max-width: 1100px;
+    --header-height: 64px;
+}
+
+/* =========================================
+   2. RESET
+   Quita los estilos por defecto del navegador
+   para partir de una base consistente.
+   ========================================= */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;  /* el padding y el borde no suman al ancho */
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;                    /* desplazamiento suave con los enlaces # */
+    scroll-padding-top: var(--header-height);   /* evita que el header fijo tape los títulos */
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   3. ESTILOS BASE
+   ========================================= */
+body {
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: var(--space-md);
+}
+
+/* =========================================
+   4. HEADER Y NAVEGACIÓN
+   ========================================= */
+header {
+    position: sticky;   /* se queda fijo arriba al hacer scroll */
+    top: 0;
+    z-index: 10;        /* queda por encima del resto del contenido */
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-bg-alt);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;  /* logo a la izquierda, menú a la derecha */
+    align-items: center;
+    max-width: var(--max-width);
+    height: var(--header-height);
+    margin: 0 auto;                  /* centra el nav horizontalmente */
+    padding: 0 var(--space-md);
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-text);
+}
+
+nav ul {
+    display: flex;
+    gap: var(--space-lg);
+    list-style: none;    /* quita las viñetas */
+}
+
+nav ul a {
+    color: var(--color-text-muted);
+    transition: color 0.2s;
+}
+
+nav ul a:hover {
+    color: var(--color-accent);
+}
+
+/* =========================================
+   5. SECCIONES (layout general)
+   ========================================= */
+section {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--space-xl) var(--space-md);
+}
