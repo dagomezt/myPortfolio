@@ -9,10 +9,10 @@
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
             <a href="#home" class="logo">David Gómez</a>
             <ul>
-                <li><a href="#about">Sobre mí</a></li>
+                <li><a href="#about">Sobre mi</a></li>
                 <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Proyectos</a></li>
                 <li><a href="#experience">Experiencia</a></li>
@@ -21,9 +21,15 @@
         </nav>
     </header>
     <main>
-        <section id="home">
-            <h1>Bienvenido a Mi Sitio Web</h1>
-            <p>Este es un sitio web de muestra creado para fines de demostración.</p>
+        <section id="home" class="hero">
+            <p class="hero-greeting">Hola, soy</p>
+            <h1>David Gómez</h1>
+            <p class="hero-role">Desarrollador Web</p>
+            <p class="hero-description">Construyo sitios web claros, accesibles y funcionales.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">Ver proyectos</a>
+                <a href="#contact" class="btn btn-secondary">Contáctame</a>
+            </div>
         </section>
         <section id="about">
             <h2>Sobre Mí</h2>
@@ -31,7 +37,7 @@
         </section>
         <section id="skills">
             <h2>Habilidades</h2>
-            <p>Here are some of my skills:</p>
+            <p>Aqui algunas de mis habilidades:</p>
             <ul>
                 <li>HTML</li>
                 <li>CSS</li>
@@ -41,16 +47,17 @@
         </section>
         <section id="projects">
             <h2>Proyectos</h2>
-            <p>Here are some of the projects I have worked on:</p>
-            <ul>
-                <li>Project 1</li>
-                <li>Project 2</li>
-                <li>Project 3</li>
-            </ul>
+            <p>Aqui algunos de los proyectos en los que he trabajado:</p>
+            <article class="project-card">
+                <img src="assets/imgs/proyecto1.png" alt="...">
+                <h3>Nombre</h3>
+                <p>Descripción breve</p>
+                <a href="...">Ver código</a>
+            </article>
         </section>
         <section id="experience">
             <h2>Experiencia</h2>
-            <p>Here is a summary of my work experience:</p>
+            <p>Aqui tienes un resumen de mi experiencia laboral:</p>
             <ul>
                 <li>Company A - Position 1</li>
                 <li>Company B - Position 2</li>
@@ -62,13 +69,16 @@
             <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-                <br>
+                <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-                <br>
+                <textarea id="message" name="message" placeholder="Your message here..." required></textarea>
                 <input type="submit" value="Submit">
             </form>
         </section>
-    </main>
+    </main>           
+<footer>
+        <p>&copy; 2024 David Gómez. Todos los derechos reservados.</p>
+</footer>
 </body>
 </html>
